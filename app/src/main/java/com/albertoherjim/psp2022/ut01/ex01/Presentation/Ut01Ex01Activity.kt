@@ -20,8 +20,8 @@ class Ut01Ex01Activity : AppCompatActivity() {
             runOnUiThread{
                 label.text= "Cambiado!"
             }
-
-
+            Thread.sleep(2000)
+            label.text= "Cambiado2!"
             Log.d("@dev","Thread1")
         }.start()
     }
