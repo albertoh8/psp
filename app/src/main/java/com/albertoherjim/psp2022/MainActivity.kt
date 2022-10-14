@@ -3,11 +3,11 @@ package com.albertoherjim.psp2022
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import com.albertoherjim.psp2022.ut02.data.remote.RetrofitApiClient
+import com.albertoherjim.psp2022.ut02.ex02.data.remote.RetrofitApiClientAlert
 
 class MainActivity : AppCompatActivity() {
 
-    val apiClient = RetrofitApiClient()
+    val apiClient = RetrofitApiClientAlert()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,8 +15,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         Thread{
-            val users = apiClient.getUsers()
+            val users = apiClient.getAlerts()
             Log.d("@dev", "Usuarios: $users")
+
+        }.start()
+
+        Thread{
+            val user = apiClient.getAlert(10)
+            Log.d("@dev", "Usuario: $user")
 
         }.start()
 
