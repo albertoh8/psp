@@ -35,8 +35,8 @@ class RetrofitApiClientUser {
             emptyList()
         }
     }
-    fun getUser(alertId:Int): UserApiModel? {
-        val userCall = apiEndPoints.getUser(alertId)
+    fun getUser(userId:Int): UserApiModel? {
+        val userCall = apiEndPoints.getUser(userId)
         val response = userCall.execute()
         return if (response.isSuccessful){
             response.body()

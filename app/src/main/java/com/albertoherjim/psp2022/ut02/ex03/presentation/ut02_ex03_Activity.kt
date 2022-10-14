@@ -25,6 +25,11 @@ class ut02_ex03_Activity : AppCompatActivity() {
             Log.d("@dev", "Usuario: $user")
 
         }.start()
+        Thread{
+            val user = apiClient.getUser(4)
+            Log.d("@dev", "Usuario: $user")
+
+        }.start()
 
     }
 }
